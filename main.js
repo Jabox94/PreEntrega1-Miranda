@@ -21,7 +21,7 @@ function prestamo() {
     const montoMax = 200000;
     let montoPrestamo = prompt(`A continuación, ingrese el monto a solicitar entre $${montoMin} y $${montoMax}`, '1000');
 
-    if (montoPrestamo <= montoMin || montoPrestamo > montoMax && montoPrestamo != null) {
+    if (montoPrestamo <= montoMin || montoPrestamo >= montoMax && montoPrestamo != null) {
         alert(`Recuerde que el valor minimo es de $${montoMin} y el mayor es de $${montoMax}`);
         montoPrestamo = null;
         alert('Operación cancelda, refresque e intente nuevamente');
@@ -29,7 +29,7 @@ function prestamo() {
     }
 
     let confirmar = prompt(`El monto a solicitar es de $${montoPrestamo} ¿Es correcto?`, 'Si/No');
-    if (confirmar != 'Si' || confirmar != 'si') {
+    if (confirmar != 'Si' && confirmar != 'si') {
         return montoPrestamo;
     } else if (confirmar == 'No' && confirmar == 'no' && confirmar == null) {
         alert('Operación cancelda');
@@ -89,13 +89,6 @@ function controlFlujo() {
         IVA de 22% +
         El precio total final es de: $${total}
     `);
-
-    document.write(`El total a pagar es de: ${total}`)
-
-    /*
-        total = totalPagar(1000, 35, 45, 22);
-        alert(`${total}`);
-    */
 }
 
 /***************************************************************************/
