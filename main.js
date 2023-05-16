@@ -1,15 +1,18 @@
 /*****************************************************************************
-
-Calculadora de prestamo 
+Calculadora de prestamo
 (basasado en https://prestamosweb.anda.com.uy/prestamosweb/servlet/simuladorprestamo)
 
 *****************************************************************************/
 
-function saludo() {
-    alert(`Sea bienvenido/a`);
+// Agregando correccion
+init();
+function init() {
+    let comenzar = confirm('Bienvenido, ¿Desea iniciar?');
+    while (comenzar === true) {
+        controlFlujo();
+        comenzar = confirm('¿Desea continuar utilizando el programa?');
+    }
 }
-
-/***************************************************************************/
 
 function prestamo() {
     // Valor minimo de mil pesos
@@ -37,7 +40,6 @@ function prestamo() {
 }
 
 /***************************************************************************/
-
 function tasaInteres(a) {
     let monto = a;
     let tasaInteres;
@@ -95,7 +97,5 @@ function controlFlujo() {
         alert(`${total}`);
     */
 }
-
-controlFlujo();
 
 /***************************************************************************/
